@@ -20,13 +20,14 @@
 .Movie-container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   text-align: center;
   justify-content: center;
   gap: 20px;
 }
 
 .Movie-wrapper {
-  width: 80%;
+  width: 400px;
   background-color: antiquewhite;
   color: black;
 }
@@ -34,7 +35,29 @@
 .Movie-search {
   font-size: 24px;
   font-weight: bold;
+  width: 375px;
   height: 32px;
   margin-bottom: 32px;
-  padding: 16px;
+  padding: 8px;
+}
+
+.Movie-title {
+  height: 60px;
+  margin-top: 24px;
+  font-weight: bold;
+}
+.Movie-image {
+  width: 100%;
+}
+
+.Movie-date {
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+.Movie-rate {
+  margin-bottom: 24px;
+  color: red;
+  font-weight: bold;
 }

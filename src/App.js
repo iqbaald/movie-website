@@ -11,11 +11,31 @@ function App() {
     });
   }, []);
 
-  const search = (q) => {
-    console.log({ q });
+  const ListOfMovie = () => {
+    return movieList.map((movie) => {
+      return (
+        <div className="Movie-wrapper" key={movie.id}>
+          <div className="Movie-title">{movie.title}</div>
+          <img
+            className="Movie-image"
+            src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}
+            alt={movie.title}
+          />
+          <div className="Movie-date">Release : {movie.release_date}</div>
+          <div className="Movie-rate">{movie.vote_average}</div>
+        </div>
+      );
+    });
   };
 
-  console.log({ movieList: movieList });
+  // const [debouncedValue] = useDebounce(search, 3000);
+
+  const search = async (q) => {
+    if (q.length > 3) {
+      const query = await searchMovie(q);
+      setMovieList(query.results);
+    }
+  };
 
   return (
     <div className="App">
@@ -29,12 +49,7 @@ function App() {
           }}
         />
         <div className="Movie-container">
-          <div className="Movie-wrapper">
-            <div className="Movie-title">Fallout</div>
-            <img className="Movie-image" src="" />
-            <div className="Movie-date">23-04-2024</div>
-            <div className="Movie-rate">8.9</div>
-          </div>
+          <ListOfMovie />
         </div>
       </header>
     </div>
