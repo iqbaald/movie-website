@@ -18,10 +18,23 @@
 }
 
 .Movie-container {
-  height: 100px;
-  width: 100vw;
-  background-color: antiquewhite;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .Movie-wrapper {
+  width: 80%;
+  background-color: antiquewhite;
+  color: black;
+}
+
+.Movie-search {
+  font-size: 24px;
+  font-weight: bold;
+  height: 32px;
+  margin-bottom: 32px;
+  padding: 16px;
 }
